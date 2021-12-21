@@ -1,0 +1,38 @@
+<div class="post max-w-xs">
+    <div class="image rounded max-w-xs max-h-64 relative">
+        <img class="object-cover rounded-lg" src={{post.animalImagePath}} alt="">
+    <p class="absolute bottom-0 p-2 bg-white/70 right-0 rounded-tl-lg font-semibold">{{post.creationDate}}</p>
+    </div>
+    <div class="content space-y-2">
+        <h1 class="text-2xl font-bold">{{post.title}}</h1>
+        <div class="profile flex items-center space-x-2 mb-6">
+            <img class="rounded-full w-6" src={{post.ownerImagePath}} alt="">
+            <p class="text-gray-500 text-sm font-medium">{{post.ownerName}}</p>
+        </div>
+        <p class="text-sm font-medium text-gray-800">{{post.description}}</p>
+        <p class="text-pink-600 flex items-center space-x-4 mt-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              <span class="font-semibold">{{post.ownerNumber}}</span>
+        </p>
+    </div>
+    <div class="line h-[1px] bg-gray-300 mt-6"></div>
+    <div class="place flex items-center space-x-2 py-4 text-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          <span>{{post.place}}</span>
+    </div>
+    <div class="line h-[1px] bg-gray-300 my-2"></div>
+    <div class="buttons py-4 flex items-center space-x-4">
+        <a [routerLink]="['/post/',post.id]" routerLinkActive="router-link-active"  class="w-full text-center px-8 py-3 font-semibold bg-green-400 text-white rounded-lg hover:bg-green-500 transition">Show Details</a>
+        <div class="like text-gray-600 p-3 flex items-center bg-gray-100 rounded-lg hover:bg-gray-200 transition cursor-pointer" (click)="likeAnimal()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+              <span class="font-bold">{{post.likes}}</span>
+        </div>
+    </div>
+</div>
